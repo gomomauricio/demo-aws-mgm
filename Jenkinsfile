@@ -21,7 +21,7 @@ pipeline {
                  sh 'chmod +x mvnw'
                 
                 // 2. Ejecutamos la compilación con el archivo clonado
-                sh './mvnw clean compile'
+                sh './mvnw clean package -DskipTests'
             }
         }
 

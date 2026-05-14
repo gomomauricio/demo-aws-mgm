@@ -17,7 +17,11 @@ pipeline {
 
         stage('Build Maven') {
             steps {
-                sh 'mvn clean compile'
+				// 1. Damos permisos de ejecución al wrapper
+                 sh 'chmod +x mvnw'
+                
+                // 2. Ejecutamos la compilación con el archivo clonado
+                sh './mvnw clean compile'
             }
         }
 
